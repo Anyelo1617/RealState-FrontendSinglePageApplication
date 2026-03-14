@@ -71,3 +71,83 @@ Este proyecto tiene un fuerte enfoque pedagógico, cubriendo implementaciones av
 │    └───────────────────────────────────────────────────────────────────┘    │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
+
+```
+---
+
+## 🚀 Instalación y Configuración
+```text
+### Prerrequisitos
+- Node.js 20.19+ o 22.12+
+- npm 10+
+
+### Instalación y Comandos disponibles
+
+# Servidor de desarrollo (puerto 3001)
+npm run dev
+
+# Verificar tipos de TypeScript
+npm run type-check
+
+# Ejecutar linter
+npm run lint
+
+# Formatear código
+npm run format
+
+# Build de producción
+npm run build
+
+# Previsualizar build de producción
+npm run preview
+```
+
+## 📂 Estructura del Directorio
+
+```text
+module2-real-estate/
+├── components.json            # Configuración de componentes de Shadcn UI
+├── eslint.config.js           # Reglas de linting
+├── index.html                 # Punto de entrada HTML
+├── package.json               # Dependencias del proyecto
+├── package-lock.json          # Árbol de versiones bloqueado
+├── README.md                  # Esta documentación
+├── TECH_STACK.md              # Versiones de dependencias y stack
+├── tsconfig.json              # Configuración principal de TypeScript
+├── tsconfig.node.json         # Configuración TS para entorno Node
+├── vite.config.ts             # Configuración de Vite y Tailwind v4
+├── slides/                    # Presentaciones y material de la clase
+└── src/
+    ├── main.tsx               # Punto de entrada de React
+    ├── App.tsx                # Componente raíz y configuración de Rutas
+    ├── index.css              # Estilos globales y variables de Shadcn
+    ├── components/
+    │   ├── ui/                # Componentes base Shadcn UI (button, card, etc.)
+    │   ├── CompareButton.tsx  # Componente para añadir a comparación
+    │   ├── PropertyCard.tsx   # Componente visual de la tarjeta de propiedad
+    │   └── PropertyForm.tsx   # Formulario de creación con validación Zod
+    ├── pages/
+    │   ├── ComparePage.tsx    # Vista de tabla comparativa side-by-side
+    │   ├── HomePage.tsx       # Vista principal (Catálogo y filtros)
+    │   ├── NewPropertyPage.tsx# Vista para crear una nueva propiedad
+    │   └── PropertyDetailPage.tsx # Vista de detalle de una propiedad
+    ├── lib/
+    │   ├── storage.ts         # Operaciones de localStorage
+    │   └── utils.ts           # Funciones de utilidad (ej. cn para Tailwind)
+    ├── types/
+    │   └── property.ts        # Interfaces TS y esquemas de validación Zod
+    └── data/
+        └── sampleProperties.ts# Datos semilla de propiedades
+```
+
+## 🗺️Parte 1: Property Comparison:
+
+1. **Selección de hasta 3 propiedades.**
+
+2. **Tabla comparativa side-by-side (Precio, hab., baños, área, precio/m²).**
+
+3. **Resaltado dinámico del mejor valor.**
+
+4. **Persistencia y manejo de Empty States.**
+
+Link al video explicativo: 
