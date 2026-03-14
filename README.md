@@ -150,4 +150,6 @@ module2-real-estate/
 
 4. **Persistencia y manejo de Empty States.**
 
-Link al video explicativo: 
+```text
+Link al video explicativo:
+```
