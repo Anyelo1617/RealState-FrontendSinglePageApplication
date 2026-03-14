@@ -89,11 +89,12 @@ export default function ComparePage() {
                 </td>
               ))}
             </tr>
+            {/* FILA HABITACIONES / BAÑOS */}
             <tr>
               <td className="p-4 font-semibold bg-muted/10">Dormitorios / Baños</td>
               {list.map(p => (
-                <td key={p.id} className="p-4 text-center border-l border-border">
-                  {p.bedrooms} hab. / {p.bathrooms} baños
+                <td key={p.id} className="p-4 text-center border-l border-border text-muted-foreground">
+                  {p.bedrooms > 0 ? `${p.bedrooms} hab.` : 'N/A'} / {p.bathrooms > 0 ? `${p.bathrooms} baños` : 'N/A'}
                 </td>
               ))}
             </tr>
