@@ -22,7 +22,7 @@ import { NewPropertyPage } from '@/pages/NewPropertyPage';
 import { PropertyDetailPage } from '@/pages/PropertyDetailPage';
 
 // ComparePage
-import { ComparePage } from '@/pages/ComparePage';
+import ComparePage from '@/pages/ComparePage';
 
 /**
  * Componente principal de la aplicación.
@@ -108,6 +108,7 @@ function App(): React.ReactElement {
               }
             />
           </Routes>
+
         </main>
 
         {/* ===================================================================

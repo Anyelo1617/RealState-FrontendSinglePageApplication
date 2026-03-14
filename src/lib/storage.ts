@@ -50,6 +50,9 @@ import { generateId } from './utils';
 // Clave para almacenar propiedades en localStorage
 const STORAGE_KEY = 'real_estate_properties';
 
+// NUEVA Clave para almacenar las propiedades a comparar
+const COMPARE_STORAGE_KEY = 'real_estate_compare_list';
+
 // =============================================================================
 // OPERACIONES CRUD
 // =============================================================================
@@ -262,4 +265,50 @@ export function initializeWithSampleData(): void {
     saveProperties(sampleData as Property[]);
     console.log('Datos de ejemplo cargados');
   });
+}
+
+
+// =============================================================================
+// OPERACIONES DE COMPARACIÓN
+// =============================================================================
+
+export function getCompareList(): Property[] {
+  try {
+    // Si no hay nada, el '||' hace que lea un array vacío en texto '[]'
+    return JSON.parse(localStorage.getItem(COMPARE_STORAGE_KEY) || '[]');
+  } 
+  catch {
+    return []; // Si el JSON está roto, devolvemos array vacío por seguridad
+  }
+}
+
+function saveCompareList(properties: Property[]): void {
+  try {
+    localStorage.setItem(COMPARE_STORAGE_KEY, JSON.stringify(properties));
+  } 
+  catch (error) {
+    console.error('Error al guardar lista de comparación:', error);
+  }
+}
+
+export function togglePropertyCompare(property: Property) {
+  const list = getCompareList();
+  const exists = list.find((p) => p.id === property.id);
+
+  // Si ya existe, la quitamos
+  if (exists) {
+    const newList = list.filter((p) => p.id !== property.id);
+    saveCompareList(newList);
+    return { success: true, newList };
+  }
+
+  // Si no existe, pero ya hay 3, bloqueamos
+  if (list.length >= 3) {
+    return { success: false, message: 'Solo puedes comparar hasta 3 propiedades.', newList: list };
+  }
+
+  // Si hay espacio, la agregamos
+  const newList = [...list, property];
+  saveCompareList(newList);
+  return { success: true, newList };
 }
