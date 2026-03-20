@@ -154,3 +154,23 @@ module2-real-estate/
 Link al video explicativo:
 ```
 https://youtu.be/7xq0ae6DlVo
+
+
+## 🖼️ Parte 2: Galería de Imágenes (Image Gallery)
+
+1. **Thumbnail Grid: Visualización organizada de todas las imágenes de la propiedad en una cuadrícula de miniaturas interactivas.**
+
+2. **Full-screen Modal: Apertura de imágenes en una vista de pantalla completa al hacer clic, mejorando la experiencia visual.**
+
+3. **Navegación Intuitiva: * Botones laterales (flechas) para navegar entre imágenes.**
+
+4. **Soporte completo para teclado (flechas izquierda/derecha y tecla Esc para cerrar).**
+
+5. **Indicador de Posición: Contador dinámico de imágenes (ej. "3 de 10") para orientar al usuario.**
+
+6. **Experiencia de Usuario (UX): Cierre de modal mediante botón dedicado, clic en el fondo (backdrop) o teclado.**
+
+```text
+Link al video explicativo 2:
+```
+
